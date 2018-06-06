@@ -1,0 +1,34 @@
+plugins {
+    id "checkstyle"
+    id "java"
+    id "org.springframework.boot" version "1.5.13.RELEASE"
+    id "nebula.facet" version "4.0.1"
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+facets {
+    integTest {
+        parentSourceSet = 'main'
+        includeInCheckLifecycle = false
+    }
+    funcTest {
+        parentSourceSet = 'main'
+        includeInCheckLifecycle = false
+    }
+}
+
+checkstyle {
+    checkstyleTest.enabled = false
+}
+
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:1.18.0"
+    compileOnly "com.google.code.findbugs:jsr305:3.0.2"
+}
