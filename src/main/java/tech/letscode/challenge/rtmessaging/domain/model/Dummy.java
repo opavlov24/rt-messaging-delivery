@@ -4,6 +4,7 @@ import javax.annotation.Nonnull;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.hateoas.core.Relation;
 import tech.letscode.challenge.rtmessaging.shared.Args;
 
 /**
@@ -11,6 +12,7 @@ import tech.letscode.challenge.rtmessaging.shared.Args;
  */
 @Document(collection = "dummies")
 @Getter
+@Relation(collectionRelation = "dummies")
 public class Dummy
 {
     @Id
