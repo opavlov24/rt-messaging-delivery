@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -20,11 +20,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = DEFINED_PORT, properties = "server.port=8080")
 public class ApplicationFuncTest
 {
 
-    public static long SLEEP_TIME_IN_MS = 2000;
+    private static final long SLEEP_TIME_IN_MS = 2000;
 
     @Autowired
     private MockMvc mockMvc;
@@ -44,7 +44,7 @@ public class ApplicationFuncTest
         Thread.sleep(SLEEP_TIME_IN_MS);
 
         //then
-        this.mockMvc.perform(get("/dummies"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/dummies"))
                     .andExpect(jsonPath("$._embedded.dummies").exists());
 
     }
