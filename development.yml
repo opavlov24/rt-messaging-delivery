@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo:3.6
+    restart: always
+    ports:
+      - 27017:27017
+
+  rabbit:
+    build: ./docker/rabbit/
+    restart: always
+    ports:
+      - 5672:5672
+      - 61613:61613
+      - 15672:15672

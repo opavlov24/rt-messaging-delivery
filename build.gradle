@@ -32,6 +32,7 @@ dependencies {
     compileOnly "org.projectlombok:lombok:1.18.0"
     compileOnly "com.google.code.findbugs:jsr305:3.0.2"
 
+    compile "org.springframework.boot:spring-boot-starter-amqp"
     compile "org.springframework.data:spring-data-mongodb"
     compile "org.springframework.boot:spring-boot-starter-hateoas"
     compile "org.springframework.boot:spring-boot-starter-web"
