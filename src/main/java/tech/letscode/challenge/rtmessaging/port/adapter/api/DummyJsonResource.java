@@ -8,7 +8,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.Resource;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +33,7 @@ public class DummyJsonResource
         return assembler.toResource(page);
     }
 
-    @PostMapping(value = "/dummies", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "/dummies")
     public ResponseEntity<Void> createNewDummy(@RequestBody @Valid PostDummyModel payload)
     {
         this.dummyApplicationService.createDummy(payload.getMessage());
