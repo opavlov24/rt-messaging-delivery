@@ -36,9 +36,13 @@ dependencies {
     compile "org.springframework.data:spring-data-mongodb"
     compile "org.springframework.boot:spring-boot-starter-hateoas"
     compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-websocket"
+
+    compile "io.projectreactor:reactor-net:2.0.8.RELEASE"
+    compile "io.projectreactor:reactor-core:2.0.8.RELEASE"
+    compile "io.netty:netty-all:4.1.25.Final"
 
     testCompile "org.springframework.boot:spring-boot-starter-test"
-    testCompile "org.mockito:mockito-all:1.9.5"
     testCompile "junit:junit:4.12"
 
     integTestCompile "org.springframework.boot:spring-boot-starter-test"
