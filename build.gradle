@@ -44,4 +44,7 @@ dependencies {
     integTestCompile "org.springframework.boot:spring-boot-starter-test"
     integTestCompile "junit:junit:4.12"
     integTestRuntime "de.flapdoodle.embed:de.flapdoodle.embed.mongo"
+
+    funcTestCompile "org.springframework.boot:spring-boot-starter-test"
+    funcTestCompile "junit:junit:4.12"
 }
