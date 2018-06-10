@@ -34,6 +34,9 @@ dependencies {
 
     compile "org.springframework.data:spring-data-mongodb"
 
+    testCompile "org.mockito:mockito-all:1.9.5"
+    testCompile "junit:junit:4.12"
+
     integTestCompile "org.springframework.boot:spring-boot-starter-test"
     integTestCompile "junit:junit:4.12"
     integTestRuntime "de.flapdoodle.embed:de.flapdoodle.embed.mongo"
