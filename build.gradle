@@ -31,4 +31,10 @@ checkstyle {
 dependencies {
     compileOnly "org.projectlombok:lombok:1.18.0"
     compileOnly "com.google.code.findbugs:jsr305:3.0.2"
+
+    compile "org.springframework.data:spring-data-mongodb"
+
+    integTestCompile "org.springframework.boot:spring-boot-starter-test"
+    integTestCompile "junit:junit:4.12"
+    integTestRuntime "de.flapdoodle.embed:de.flapdoodle.embed.mongo"
 }
