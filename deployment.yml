@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  service:
+    build: .
+    environment:
+      SPRING_DATA_MONGODB_HOST: mongo
+      SPRING_RABBITMQ_HOST: rabbit
+      SPRING_RABBITMQ_USERNAME: guest
+      SPRING_RABBITMQ_PASSWORD: guest
+    restart: always
+    depends_on:
+      - mongo
+      - rabbit
+    ports:
+      - 80:8080
+
+  mongo:
+    image: mongo:3.6
+    restart: always
+
+  rabbit:
+    build: ./docker/rabbit/
+    restart: always
