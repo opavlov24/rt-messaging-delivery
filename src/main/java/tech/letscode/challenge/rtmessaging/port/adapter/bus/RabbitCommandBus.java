@@ -8,7 +8,6 @@ import tech.letscode.challenge.rtmessaging.application.Command;
 import tech.letscode.challenge.rtmessaging.application.CommandBus;
 
 import static tech.letscode.challenge.rtmessaging.port.adapter.bus.ExchangeConfiguration.COMMAND_PROCESSING_EXCHANGE;
-import static tech.letscode.challenge.rtmessaging.port.adapter.bus.ExchangeConfiguration.CREATE_DUMMY_ROUTING_KEY;
 
 /**
  * @author Oleg Pavlov <oleg.pavlov@aol.com>
@@ -22,6 +21,6 @@ public class RabbitCommandBus implements CommandBus
     @Override
     public void put(@Nonnull Command command)
     {
-        this.rabbitTemplate.convertAndSend(COMMAND_PROCESSING_EXCHANGE, CREATE_DUMMY_ROUTING_KEY, command);
+        this.rabbitTemplate.convertAndSend(COMMAND_PROCESSING_EXCHANGE, command.commandName(), command);
     }
 }

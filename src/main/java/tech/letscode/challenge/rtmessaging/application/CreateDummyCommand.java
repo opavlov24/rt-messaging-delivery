@@ -8,7 +8,15 @@ import lombok.Value;
 @Value
 public class CreateDummyCommand implements Command //for Rabbit
 {
+    public static final String COMMAND_NAME = "CREATE_DUMMY";
+
     private String id;
 
     private String message;
+
+    @Override
+    public String commandName()
+    {
+        return COMMAND_NAME;
+    }
 }

@@ -22,7 +22,7 @@ public class CreateDummyCommandListener
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(value = ExchangeConfiguration.CREATE_DUMMY_QUEUE, durable = "true"),
             exchange = @Exchange(value = ExchangeConfiguration.COMMAND_PROCESSING_EXCHANGE, durable = "true"),
-            key = ExchangeConfiguration.CREATE_DUMMY_ROUTING_KEY
+            key = CreateDummyCommand.COMMAND_NAME
     ))
     public void createDummyCommandHandler(@Payload CreateDummyCommand command)
     {
