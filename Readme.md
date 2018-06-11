@@ -69,3 +69,9 @@ see the message in your browser.
 3. Spring Boot 1.5.13 (web, websockets, data, amqp, hateos)
 4. Mongo 3.6 and Rabbit 3
 
+## What should be improved
+
+1. Use json format for the queues.
+2. Extract the websocket topic path into the configuration.
+3. Configure dead letter / retry policy for the queue's listeners.
+4. Add an addition functional test to test websockets.
