@@ -6,7 +6,7 @@ import lombok.Value;
  * @author Oleg Pavlov <oleg.pavlov@aol.com>
  */
 @Value
-public class CreateDummyCommand implements Command //for Rabbit
+public class CreateDummyCommand implements Command
 {
     public static final String COMMAND_NAME = "CREATE_DUMMY";
 
